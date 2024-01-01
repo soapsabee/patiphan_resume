@@ -48,29 +48,31 @@ export const Layout = () => {
     const handleSetTitleMenu = (tab) => {
         let line = document.querySelector(".line")
         // line.style.height = e.target.offsetHeight + "px"
-  
-        if (line == null) {
+        if(line && isDesktopOrLaptop && refHome) line.style.top = refHome.current.getBoundingClientRect().top + 29 + "px"
+
+        if (line == null && isTabletOrMobile) {
             handleCloseBar()
         }
 
         switch (tab) {
             case "/home":
-                if(line) line.style.top = refHome.current.getBoundingClientRect().top + 29 + "px"
+                if(line && isDesktopOrLaptop && refHome) line.style.top = refHome.current.getBoundingClientRect().top + 29 + "px"
                 setTitleMenu("หน้าแรก")
                 break;
             case "/aboutme":
-                if(line) line.style.top = refAboutme.current.getBoundingClientRect().top + 29 + "px"
+                if(line && isDesktopOrLaptop && refAboutme) line.style.top = refAboutme.current.getBoundingClientRect().top + 29 + "px"
                 setTitleMenu("เกี่ยวกับผม")
                 break;
             case "/file-document":
-                if(line) line.style.top = refResume.current.getBoundingClientRect().top + 29  + "px"
+                if(line && isDesktopOrLaptop && refResume) line.style.top = refResume.current.getBoundingClientRect().top + 29  + "px"
                 setTitleMenu("Resume PDF")
                 break;
             case "/portfolio":
-                if(line) line.style.top = refPortfolio.current.getBoundingClientRect().top + 29  + "px"
+                if(line && isDesktopOrLaptop && refPortfolio) line.style.top = refPortfolio.current.getBoundingClientRect().top + 29  + "px"
                 setTitleMenu("Portfolio")
                 break;
             default:
+                if(line) line.style.display = "none"
         }
     }
 
@@ -83,8 +85,12 @@ export const Layout = () => {
     }
 
     useEffect(() => {
-        handleSetTitleMenu(location.pathname)
-    }, [location.pathname])
+        if(location.pathname){
+            handleSetTitleMenu(location.pathname)
+        }
+    }, [location.pathname , isDesktopOrLaptop])
+
+
 
     return (
         <>
@@ -94,8 +100,8 @@ export const Layout = () => {
                     <>
                         <div class='fixed left-0 top-0 w-40 bg-white h-screen filter drop-shadow-lg'>
                             <div>
-                                <div>
-                                    <img src={imgAvatar} ></img>
+                                <div class="flex justify-center">
+                                    <img src={imgAvatar} class={"h-64"}></img>
                                 </div>
                                 <div class="h-full bg-white text-center p-4">
                                     <p class="text-sm text-titleCustom"> ปฏิภาณ วิบูลย์ชาติ </p>
