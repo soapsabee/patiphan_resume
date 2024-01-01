@@ -1,4 +1,4 @@
-import { useNavigate,useRoutes} from 'react-router-dom';
+import { useRoutes, Navigate} from 'react-router-dom';
 import { HomePage, AboutMePage, DownloadPDFPage, PortfolioPage } from '../pages'
 import { Layout } from '../components';
 
@@ -7,6 +7,7 @@ const Routes = () => {
         path: "/",
         element: <Layout/>,
         children: [
+          { element: <Navigate to="home" />, index: true },
           { path: "home", element: <HomePage/> },
           { path: "aboutme", element: <AboutMePage/> },
           { path: "file-document", element: <DownloadPDFPage/>},
