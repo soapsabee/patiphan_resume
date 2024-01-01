@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import HomeIcon from '../../assets/icons/home.svg'
 import UserIcon from '../../assets/icons/user.svg'
 import PaperIcon from '../../assets/icons/paper.svg'
 import BoxIcon from '../../assets/icons/box.svg'
-import imgAvatar from '../../assets/images/img_avatar.png'
+import imgAvatar from '../../assets/images/img_profile.jpg'
 import BarIcon from '../../assets/icons/bars.svg'
 import ChevronIcon from '../../assets/icons/chevron-left.svg'
 import { desktopOrLaptop, tabletOrMobile } from '../helper/device'
@@ -17,6 +17,10 @@ export const Layout = () => {
     const [titleMenu, setTitleMenu] = useState("")
     const navigate = useNavigate()
     const location = useLocation()
+    const refHome = useRef()
+    const refAboutme = useRef()
+    const refResume = useRef()
+    const refPortfolio = useRef()
     const handleClickTab = (tab) => {
     
         switch (tab) {
@@ -42,7 +46,6 @@ export const Layout = () => {
     }
 
     const handleSetTitleMenu = (tab) => {
-
         let line = document.querySelector(".line")
         // line.style.height = e.target.offsetHeight + "px"
   
@@ -52,19 +55,19 @@ export const Layout = () => {
 
         switch (tab) {
             case "/home":
-                if(line) line.style.top = "220px"
+                if(line) line.style.top = refHome.current.getBoundingClientRect().top + 29 + "px"
                 setTitleMenu("หน้าแรก")
                 break;
             case "/aboutme":
-                if(line) line.style.top = "280px"
+                if(line) line.style.top = refAboutme.current.getBoundingClientRect().top + 29 + "px"
                 setTitleMenu("เกี่ยวกับผม")
                 break;
             case "/file-document":
-                if(line) line.style.top = "340px"
+                if(line) line.style.top = refResume.current.getBoundingClientRect().top + 29  + "px"
                 setTitleMenu("Resume PDF")
                 break;
             case "/portfolio":
-                if(line) line.style.top = "400px"
+                if(line) line.style.top = refPortfolio.current.getBoundingClientRect().top + 29  + "px"
                 setTitleMenu("Portfolio")
                 break;
             default:
@@ -91,32 +94,32 @@ export const Layout = () => {
                     <>
                         <div class='fixed left-0 top-0 w-40 bg-white h-screen filter drop-shadow-lg'>
                             <div>
-                                <div class="ml-5 mr-5 mt-5">
-                                    <img src={imgAvatar} class="w-full object-contain min-h-0 h-full"></img>
+                                <div>
+                                    <img src={imgAvatar} ></img>
                                 </div>
                                 <div class="h-full bg-white text-center p-4">
                                     <p class="text-sm text-titleCustom"> ปฏิภาณ วิบูลย์ชาติ </p>
                                 </div>
                                 <div class="tab_box">
-                                    <div class="border-t border-blackCustom border-opacity-5 p-2 h-22">
+                                    <div ref={refHome} class="border-t border-blackCustom border-opacity-5 p-2 h-22">
                                         <div class="text-center cursor-pointer" onClick={(e) => handleClickTab("home")}>
                                             <HomeIcon class="h-6 w-full text-titleCustom " />
                                             <p class="text-sm ">หน้าแรก</p>
                                         </div>
                                     </div>
-                                    <div class="border-t border-blackCustom border-opacity-5 p-2 h-22" >
+                                    <div ref={refAboutme} class="border-t border-blackCustom border-opacity-5 p-2 h-22" >
                                         <div class="text-center cursor-pointer" onClick={(e) => handleClickTab("aboutme")}>
                                             <UserIcon class="h-6 w-full text-titleCustom " />
                                             <p class="text-sm ">เกี่ยวกับผม</p>
                                         </div>
                                     </div>
-                                    <div class="border-t border-blackCustom border-opacity-5 p-2 h-22">
+                                    <div ref={refResume} class="border-t border-blackCustom border-opacity-5 p-2 h-22">
                                         <div class="text-center cursor-pointer" onClick={(e) => handleClickTab("resume")}>
                                             <PaperIcon class="h-6 w-full text-titleCustom" />
                                             <p class="text-sm ">Resume PDF</p>
                                         </div>
                                     </div>
-                                    <div class="border-t border-blackCustom border-opacity-5 border-b p-2 h-22">
+                                    <div ref={refPortfolio} class="border-t border-blackCustom border-opacity-5 border-b p-2 h-22 ">
                                         <div class="text-center cursor-pointer" onClick={(e) => handleClickTab("portfolio")}>
                                             <BoxIcon class="h-6 w-full text-titleCustom" />
                                             <p class="text-sm ">Portfolio</p>
@@ -125,9 +128,9 @@ export const Layout = () => {
                                     <div class="">
 
                                     </div>
-                                    <div class="line absolute w-14 h-1 bg-bgCustom rotate-90 transition-ally ease-out duration-500" style={{ top: "220px", left: "130px" }}></div>
+                                    <div class="line absolute w-14 h-1 bg-bgCustom rotate-90 transition-ally ease-out duration-500" style={{ left: "130px" }}></div>
                                 </div>
-                                <div class="h-80 grid content-end text-center text-gray-400	">
+                                <div class="h-64 grid content-end text-center text-gray-400	">
                                     v.0.01
                                 </div>
                             </div>
