@@ -7,8 +7,9 @@ export const AboutMe = () => {
 
     const isTabletOrMobile = useMediaQuery({ query: tabletOrMobile })
     const isMobile = useMediaQuery({ query: mobileOnly })
+    const calculateAge = () => new Date().getFullYear() - 1997;
     return (
-        <div class={`mx-auto h-full p-10 ${isTabletOrMobile && "mt-20"}`}>
+        <div class={`mx-auto p-10 ${isTabletOrMobile && "mt-20"}`}>
 
             <div class="container w-500 h-full filter drop-shadow-lg bg-white p-10">
 
@@ -21,7 +22,7 @@ export const AboutMe = () => {
                             isMobile ? <div class="col-start-1 col-span-1 ">
                                 <p class="text-lg text-titleCustom"> ข้อมูลส่วนตัว</p>
                                 <p class="text-sm mt-2"> ชื่อจริง นาย ปฏิภาณ วิบูลย์ชาติ </p>
-                                <p class="text-sm ">ชื่อเล่น แจ็ค อายุ 25 ปี</p>
+                                <p class="text-sm ">ชื่อเล่น แจ็ค อายุ {calculateAge()} ปี</p>
                                 <p class="text-sm ">จบการศึกษาในสาขา วิศวกรรมซอฟต์แวร์</p>
                                 <p class="text-sm "> วิทยาลัยการจัดการคอมพิวเตอร์</p>
                                 <p class="text-sm ">มหาวิทยาลัยสงขลานครินทร์ วิทยาเขต ภูเก็ต</p>
@@ -29,7 +30,7 @@ export const AboutMe = () => {
                                 :
                                 <div class="col-start-1 col-span-1 ">
                                     <p class="text-lg text-titleCustom"> ข้อมูลส่วนตัว</p>
-                                    <p class="text-sm mt-2"> ชื่อจริง นาย ปฏิภาณ วิบูลย์ชาติ ชื่อเล่น แจ็ค อายุ 25 ปี </p>
+                                    <p class="text-sm mt-2"> ชื่อจริง นาย ปฏิภาณ วิบูลย์ชาติ ชื่อเล่น แจ็ค อายุ {calculateAge()} ปี </p>
                                     <p class="text-sm ">จบการศึกษาในสาขา วิศวกรรมซอฟต์แวร์ วิทยาลัยการจัดการคอมพิวเตอร์
                                     </p>
                                     <p class="text-sm ">
@@ -90,7 +91,7 @@ export const AboutMe = () => {
                                 <p style={{
                                     position: "absolute",
                                     transform: "translate(110px, -10px)"
-                                }}> 1 ปี 9 เดือน</p>
+                                }}> 2 ปี 4 เดือน</p>
 
                             </div>
 

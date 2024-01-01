@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import HomeIcon from '../../assets/icons/home.svg'
 import UserIcon from '../../assets/icons/user.svg'
 import PaperIcon from '../../assets/icons/paper.svg'
@@ -16,16 +16,9 @@ export const Layout = () => {
     const isTabletOrMobile = useMediaQuery({ query: tabletOrMobile })
     const [titleMenu, setTitleMenu] = useState("")
     const navigate = useNavigate()
-    const handleClickTab = (tab, topStyle) => {
-        let line = document.querySelector(".line")
-        // line.style.height = e.target.offsetHeight + "px"
-        if (line !== null) {
-            line.style.top = topStyle
-        }
-        if (line == null) {
-            handleCloseBar()
-            handleSetTitleMenu(tab)
-        }
+    const location = useLocation()
+    const handleClickTab = (tab) => {
+    
         switch (tab) {
             case "home":
                 // line.style.top = "220px"
@@ -49,22 +42,30 @@ export const Layout = () => {
     }
 
     const handleSetTitleMenu = (tab) => {
+
+        let line = document.querySelector(".line")
+        // line.style.height = e.target.offsetHeight + "px"
+  
+        if (line == null) {
+            handleCloseBar()
+        }
+
         switch (tab) {
-            case "home":
-                // line.style.top = "220px"
+            case "/home":
+                if(line) line.style.top = "220px"
                 setTitleMenu("หน้าแรก")
                 break;
-            case "aboutme":
-                // line.style.top = "280px"
+            case "/aboutme":
+                if(line) line.style.top = "280px"
                 setTitleMenu("เกี่ยวกับผม")
                 break;
-            case "resume":
-                // line.style.top = "340px"
+            case "/file-document":
+                if(line) line.style.top = "340px"
                 setTitleMenu("Resume PDF")
                 break;
-            case "portfolio":
-                // line.style.top = "400px"
-                navigate("Portfolio")
+            case "/portfolio":
+                if(line) line.style.top = "400px"
+                setTitleMenu("Portfolio")
                 break;
             default:
         }
@@ -78,9 +79,13 @@ export const Layout = () => {
         document.getElementById("sideNav").style.left = "-100%";
     }
 
+    useEffect(() => {
+        handleSetTitleMenu(location.pathname)
+    }, [location.pathname])
+
     return (
         <>
-            <div class="bg-gray-50 w-screen h-screen">
+            <div class="bg-gray-50 min-h-screen">
                 {
                     isDesktopOrLaptop &&
                     <>
@@ -94,41 +99,44 @@ export const Layout = () => {
                                 </div>
                                 <div class="tab_box">
                                     <div class="border-t border-blackCustom border-opacity-5 p-2 h-22">
-                                        <div class="text-center cursor-pointer" onClick={(e) => handleClickTab("home", "220px")}>
+                                        <div class="text-center cursor-pointer" onClick={(e) => handleClickTab("home")}>
                                             <HomeIcon class="h-6 w-full text-titleCustom " />
                                             <p class="text-sm ">หน้าแรก</p>
                                         </div>
                                     </div>
                                     <div class="border-t border-blackCustom border-opacity-5 p-2 h-22" >
-                                        <div class="text-center cursor-pointer" onClick={(e) => handleClickTab("aboutme", "280px")}>
+                                        <div class="text-center cursor-pointer" onClick={(e) => handleClickTab("aboutme")}>
                                             <UserIcon class="h-6 w-full text-titleCustom " />
                                             <p class="text-sm ">เกี่ยวกับผม</p>
                                         </div>
                                     </div>
                                     <div class="border-t border-blackCustom border-opacity-5 p-2 h-22">
-                                        <div class="text-center cursor-pointer" onClick={(e) => handleClickTab("resume", "340px")}>
+                                        <div class="text-center cursor-pointer" onClick={(e) => handleClickTab("resume")}>
                                             <PaperIcon class="h-6 w-full text-titleCustom" />
                                             <p class="text-sm ">Resume PDF</p>
                                         </div>
                                     </div>
                                     <div class="border-t border-blackCustom border-opacity-5 border-b p-2 h-22">
-                                        <div class="text-center cursor-pointer" onClick={(e) => handleClickTab("portfolio", "400px")}>
+                                        <div class="text-center cursor-pointer" onClick={(e) => handleClickTab("portfolio")}>
                                             <BoxIcon class="h-6 w-full text-titleCustom" />
                                             <p class="text-sm ">Portfolio</p>
                                         </div>
                                     </div>
+                                    <div class="">
+
+                                    </div>
                                     <div class="line absolute w-14 h-1 bg-bgCustom rotate-90 transition-ally ease-out duration-500" style={{ top: "220px", left: "130px" }}></div>
                                 </div>
-
-
+                                <div class="h-80 grid content-end text-center text-gray-400	">
+                                    v.0.01
+                                </div>
                             </div>
                         </div>
-                        <div class="relative  ml-44">
+                        <div class="ml-44">
                             <Outlet />
                         </div>
                     </>
                 }
-
                 {
                     isTabletOrMobile &&
                     <>
@@ -185,7 +193,9 @@ export const Layout = () => {
 
                                         {/* <div class="line absolute w-14 h-1 bg-bgCustom rotate-90 transition-ally ease-out duration-500" style={{ top: "110px", left: "150px" }}></div> */}
                                     </div>
-
+                                    <div class="h-80 grid content-end text-center text-gray-400	">
+                                        v.0.01
+                                    </div>
 
                                 </div>
 
@@ -195,15 +205,11 @@ export const Layout = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="relative z-10" onClick={() => handleCloseBar()}>
+                        <div class="z-10" onClick={() => handleCloseBar()}>
                             <Outlet />
                         </div>
                     </>
-
-
                 }
-
-
             </div>
 
         </>
