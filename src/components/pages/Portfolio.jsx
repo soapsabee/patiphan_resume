@@ -31,7 +31,7 @@ export const Portfolio = () => {
 
                     </div>
                 </div>
-                <div class={`grid ${isTabletOrMobile ? "grid-cols-1" : "grid-cols-2"} ${!isTabletOrMobile && "-mt-40"}`}>
+                <div class={`grid ${isTabletOrMobile ? "grid-cols-1" : "grid-cols-2"} ${!isTabletOrMobile && "-mt-32"}`}>
                 <div class="col-span-1 ">
                         <img src={mortgageLogo} class="rounded-lg"></img>
                     </div>

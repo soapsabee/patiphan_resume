@@ -136,7 +136,7 @@ export const Layout = () => {
                                     </div>
                                     <div class="line absolute w-14 h-1 bg-bgCustom rotate-90 transition-ally ease-out duration-500" style={{ left: "130px" }}></div>
                                 </div>
-                                <div class="h-64 grid content-end text-center text-gray-400	">
+                                <div class="mt-[1rem] grid content-end text-center text-gray-400	">
                                     v.0.01
                                 </div>
                             </div>
