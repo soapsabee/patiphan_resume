@@ -72,7 +72,6 @@ export const Layout = () => {
                 setTitleMenu("Portfolio")
                 break;
             default:
-                if(line) line.style.display = "none"
         }
     }
 
