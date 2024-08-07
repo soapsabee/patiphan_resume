@@ -22,7 +22,7 @@ export const Layout = () => {
     const refResume = useRef()
     const refPortfolio = useRef()
     const handleClickTab = (tab) => {
-    
+
         switch (tab) {
             case "home":
                 // line.style.top = "220px"
@@ -48,7 +48,7 @@ export const Layout = () => {
     const handleSetTitleMenu = (tab) => {
         let line = document.querySelector(".line")
         // line.style.height = e.target.offsetHeight + "px"
-        if(line && isDesktopOrLaptop && refHome) line.style.top = refHome.current.getBoundingClientRect().top + 29 + "px"
+        if (line && isDesktopOrLaptop && refHome) line.style.top = refHome.current.getBoundingClientRect().top + 29 + "px"
 
         if (line == null && isTabletOrMobile) {
             handleCloseBar()
@@ -56,19 +56,19 @@ export const Layout = () => {
 
         switch (tab) {
             case "/home":
-                if(line && isDesktopOrLaptop && refHome) line.style.top = refHome.current.getBoundingClientRect().top + 29 + "px"
+                if (line && isDesktopOrLaptop && refHome) line.style.top = refHome.current.getBoundingClientRect().top + 29 + "px"
                 setTitleMenu("หน้าแรก")
                 break;
             case "/aboutme":
-                if(line && isDesktopOrLaptop && refAboutme) line.style.top = refAboutme.current.getBoundingClientRect().top + 29 + "px"
+                if (line && isDesktopOrLaptop && refAboutme) line.style.top = refAboutme.current.getBoundingClientRect().top + 29 + "px"
                 setTitleMenu("เกี่ยวกับผม")
                 break;
             case "/file-document":
-                if(line && isDesktopOrLaptop && refResume) line.style.top = refResume.current.getBoundingClientRect().top + 29  + "px"
+                if (line && isDesktopOrLaptop && refResume) line.style.top = refResume.current.getBoundingClientRect().top + 29 + "px"
                 setTitleMenu("Resume PDF")
                 break;
             case "/portfolio":
-                if(line && isDesktopOrLaptop && refPortfolio) line.style.top = refPortfolio.current.getBoundingClientRect().top + 29  + "px"
+                if (line && isDesktopOrLaptop && refPortfolio) line.style.top = refPortfolio.current.getBoundingClientRect().top + 29 + "px"
                 setTitleMenu("Portfolio")
                 break;
             default:
@@ -84,10 +84,10 @@ export const Layout = () => {
     }
 
     useEffect(() => {
-        if(location.pathname){
+        if (location.pathname) {
             handleSetTitleMenu(location.pathname)
         }
-    }, [location.pathname , isDesktopOrLaptop])
+    }, [location.pathname, isDesktopOrLaptop])
 
 
 
@@ -134,12 +134,13 @@ export const Layout = () => {
 
                                     </div>
                                     <div className="line absolute w-14 h-1 bg-bgCustom rotate-90 transition-ally ease-out duration-500" style={{ left: "130px" }}></div>
-                                  <div className="mt-[1rem] grid content-end text-center text-gray-40 text-xs" >
-                                    v.0.02
+                                    <div className="text-gray-400 text-xs absolute bottom-0 w-full text-center">
+                                        v.0.02
+                                    </div>
+
                                 </div>
-                                </div>
-                             
-                                
+
+
                             </div>
                         </div>
                         <div className="ml-44">
@@ -203,7 +204,7 @@ export const Layout = () => {
 
                                         {/* <div className="line absolute w-14 h-1 bg-bgCustom rotate-90 transition-ally ease-out duration-500" style={{ top: "110px", left: "150px" }}></div> */}
                                     </div>
-                                    <div className="h-80 grid content-end text-center text-gray-400	">
+                                    <div className="text-gray-400 text-xs absolute bottom-0 w-full text-center">
                                         v.0.02
                                     </div>
 

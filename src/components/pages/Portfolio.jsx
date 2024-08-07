@@ -1,5 +1,4 @@
 import React from 'react'
-import gatewayLogo from '../../assets/images/gateway-bg.jpg'
 import hisImage from '../../assets/images/hisImage.jpg'
 import lineV2Logo from '../../assets/images/lineoaV2.png'
 import mortgageLogo from '../../assets/images/digitalMortgage.png'
@@ -10,14 +9,13 @@ import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 export const Portfolio = () => {
     const isTabletOrMobile = useMediaQuery({ query: tabletOrMobile })
-
     return (
         <div className={`mx-auto ${isTabletOrMobile && "mt-24"}`}>
 
             <div className="filter drop-shadow-lg bg-white p-10">
                 <div className={`grid ${isTabletOrMobile ? "grid-cols-1" : "grid-cols-2"}`}>
                     <div className={`col-span-1 ${isTabletOrMobile ? "p-0" : "p-20"}`}>
-                        <img loading='lazy' src={lineV2Logo} className="rounded-lg"></img>
+                        <img loading='lazy' className={"rounded-lg"} src={lineV2Logo} ></img>
                     </div>
                     <div className="col-span-1">
                         <div className="h-full grid content-center">
@@ -86,7 +84,7 @@ export const Portfolio = () => {
                             <p className="text-4xl">SIS Connect</p>
                             <p className="text-2xl text-red-600">(เป็นโปรเจ็คจบนักศึกษา)</p>
                             <p>
-                            repository: <a href='https://github.com/kornharem08/Chatbotv1.git'>github.com/kornharem08/Chatbotv1.git</a>
+                            repository: <a href='https://github.com/kornharem08/Chatbotv1.git' className='text-blue-600 hover:text-purple-600 '>github.com/kornharem08/Chatbotv1.git</a>
                             </p>
                             <p>
                             author : soapsabee 
