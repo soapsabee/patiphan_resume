@@ -30,12 +30,12 @@ export const AboutMe = () => {
                             </div>
                                 :
                                 <div className="col-start-1 col-span-1 ">
-                                    <p className="text-lg text-titleCustom"> ข้อมูลส่วนตัว</p>
+                                    <p className="text-lg text-titleCustom"> ข้อมูลส่วนตัว / การศึกษา</p>
                                     <p className="text-sm mt-2"> ชื่อจริง นาย ปฏิภาณ วิบูลย์ชาติ ชื่อเล่น แจ็ค อายุ {calculateAge()} ปี </p>
                                     <p className="text-sm ">จบการศึกษาในสาขา วิศวกรรมซอฟต์แวร์ วิทยาลัยการจัดการคอมพิวเตอร์
                                     </p>
                                     <p className="text-sm ">
-                                        มหาวิทยาลัยสงขลานครินทร์ วิทยาเขต ภูเก็ต
+                                        มหาวิทยาลัยสงขลานครินทร์ วิทยาเขต ภูเก็ต GPA 3.55
                                     </p>
                                 </div>
                         }
@@ -52,8 +52,14 @@ export const AboutMe = () => {
                             <div className="p-1 text-center bg-red-400 text-white">
                                 <p>javascript</p>
                             </div>
-                            <div className="p-1 text-center bg-blue-400 text-white">
+                            <div className="p-1 text-center bg-blue-400	 text-white">
+                                <p>TypeScript</p>
+                            </div>
+                            <div className="p-1 text-center bg-cyan-500 text-white">
                                 <p>React.js</p>
+                            </div>
+                            <div className="p-1 text-center bg-indigo-400 text-white">
+                                <p>RTK Query</p>
                             </div>
                             <div className="p-1 text-center bg-green-400 text-white">
                                 <p>Node.js</p>
