@@ -98,7 +98,7 @@ export const AboutMe = () => {
                                 <p style={{
                                     position: "absolute",
                                     transform: "translate(110px, -10px)"
-                                }}> 2 ปี 11 เดือน</p>
+                                }}> 3 ปี </p>
 
                             </div>
 
