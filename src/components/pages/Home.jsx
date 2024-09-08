@@ -8,7 +8,7 @@ export const Home = () => {
         {/* <img src={imgAvatar} className={"h-120 rounded-full border-2"}></img> */}
         
       </div>
-      <div className="grid grid-cols-1">
+      <div className="grid grid-cols-1 pt-6 md:pt-0">
         <p className="text-4xl text-titleCustom ">
           ปฏิภาณ วิบูลย์ชาติ
         </p>
