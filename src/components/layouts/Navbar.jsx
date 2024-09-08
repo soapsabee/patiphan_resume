@@ -16,8 +16,8 @@ export const Navbar = () => {
                         Patiphan
                     </a>
                     <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                        <li><a class="hover:text-gray-200" onClick={() => moveTo("aboutme")}>About me</a></li>
-                        <li><a class="hover:text-gray-200" onClick={() => moveTo("portfolio")}>Portfolio</a></li>
+                        <li><a class="hover:text-gray-200 cursor-pointer" onClick={() => moveTo("aboutme")}>About me</a></li>
+                        <li><a class="hover:text-gray-200 cursor-pointer" onClick={() => moveTo("portfolio")}>Portfolio</a></li>
                     </ul>
 
                 </div>
