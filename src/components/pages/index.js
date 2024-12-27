@@ -1,4 +1,5 @@
-export * from './Home'
+export * from './Home/Home'
 export * from './AboutMe'
 export * from './DownloadPDF'
-export * from './Portfolio'
+export * from './Portfolio/Portfolio'
+export * from './Contact/Contact'

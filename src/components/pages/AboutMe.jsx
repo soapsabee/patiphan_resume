@@ -4,69 +4,20 @@ import CocLogo from '../../assets/images/PSU_CoC_ENG.png'
 export const AboutMe = () => {
 
 
-    const calculateAge = () => Math.floor((new Date() - new Date('1997-10-28').getTime()) / 3.15576e+10)
 
     return (
         <>
 
-            <div className=' flex flex-row pl-40 pr-80 mt-[-50px] gap-20 '>
+            <div className='flex flex-col md:flex-row md:pl-40 md:pr-80 mt-[-50px] gap-20 '>
 
-                <div className="w-[100%]">
+            
 
-                    <div className='ml-[203px]'>
-                        <div className='border-2 rounded-full absolute w-[50px] h-[50px] ml-[-103px] bg-[#282c34]'>
-                            <div className='border-2 rounded-full absolute  w-[20px] h-[20px] bottom-4 left-4 bg-[#00C2CB]'></div>
-                        </div>
-                        <h1 className='text-titleCustom'>FULL NAME</h1>
-                        <hr />
-                        <p className="text-sm mt-2 text-gray-400"> Patiphan Wibunchat </p>
-                    </div>
-                    <div className='ml-[203px] mt-10'>
-                        <div className='border-2 rounded-full absolute w-[50px] h-[50px] ml-[-103px] bg-[#282c34]'>
-                            <div className='border-2 rounded-full absolute  w-[20px] h-[20px] bottom-4 left-4 bg-[#00C2CB]'></div>
-                        </div>
-                        <h1 className='text-titleCustom'>NICK NAME</h1>
-                        <hr />
-                        <p className="text-sm mt-2 text-gray-400"> Jack </p>
-                    </div>
-                    <div className='ml-[203px] mt-10'>
-                        <div className='border-2 rounded-full absolute w-[50px] h-[50px] ml-[-103px] bg-[#282c34]'>
-                            <div className='border-2 rounded-full absolute  w-[20px] h-[20px] bottom-4 left-4 bg-[#00C2CB]'></div>
-
-                        </div>
-                        <h1 className='text-titleCustom'>AGE</h1>
-                        <hr />
-                        <p className="text-sm mt-2 text-gray-400"> 27 </p>
-                    </div>
-                    <div className='ml-[203px] mt-10'>
-                        <div className='border-2 rounded-full absolute w-[50px] h-[50px] ml-[-103px] bg-[#282c34]'>
-                            <div className='border-2 rounded-full absolute  w-[20px] h-[20px] bottom-4 left-4 bg-[#00C2CB]'></div>
-
-                        </div>
-
-                        <h1 className='text-titleCustom'>EDUCATION</h1>
-                        <hr />
-                        <p className="text-sm mt-2 text-gray-400"> Software Engineer - College of Computing </p>
-                        <p className="text-sm mt-2 text-gray-400">Prince of Songkla Phuket Campus</p>
-                    </div>
-                    <div className='ml-[203px] mt-10'>
-                        <div className='border-2 rounded-full absolute w-[50px] h-[50px] ml-[-103px] bg-[#282c34]'>
-                            <div className='border-2 rounded-full absolute  w-[20px] h-[20px] bottom-4 left-4 bg-[#00C2CB]'></div>
-
-                        </div>
-
-                        <h1 className='text-titleCustom'>GPA</h1>
-                        <hr />
-                        <p className="text-sm mt-2 text-gray-400"> 3.55 </p>
-                    </div>
-                </div>
-
-                <div className="flex flex-col ">
+                <div className="flex flex-col sm:ml-5 sm:mr-5">
                     <div>
                         <h1 className='text-titleCustom'>SKILLS</h1>
                         <hr />
                     </div>
-                    <div className='flex flex-row gap-4 mt-10'>
+                    <div className='flex flex-row gap-4 mt-10 sm:flex-wrap'>
                         <div className=" p-1 text-center flex items-center text-white h-[50px]">
                             <svg width="50px" height="50px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.6789 15.9759C18.6789 14.5415 17.4796 13.3785 16 13.3785C14.5206 13.3785 13.3211 14.5415 13.3211 15.9759C13.3211 17.4105 14.5206 18.5734 16 18.5734C17.4796 18.5734 18.6789 17.4105 18.6789 15.9759Z" fill="#53C1DE" />

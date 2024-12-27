@@ -1,16 +1,17 @@
 import React from 'react'
 import Zoom from 'react-medium-image-zoom'
+import './style.scss'
 import 'react-medium-image-zoom/dist/styles.css'
 export const Portfolio = () => {
     return (
         <>
-            <section class="p-20" id="portfolio">
+            <section class="pl-20 pr-20" >
                 <div class="lg:container mx-auto">
-                    <h2 class="text-center text-4xl font-bold pb-10 text-titleCustom">Portfolio</h2>
+                    <h2 class="text-center text-4xl font-bold pb-10 text-titleCustom" id="portfolio">Portfolio</h2>
 
-                    <div className='w-100 flex flex-row justify-center'>
-                        <div className='p-4 items-center justify-center  rounded-xl group sm:flex space-x-6 bg-white bg-opacity-10 shadow-xl hover:rounded-2xl w-[50%] h-[500px] p-5'>
-                            <div className='flex flex-row'>
+                    <div className='box'>
+                        <div className='box-item'>
+                            <div className='box-item-inside'>
                                 <div>
                                     <Zoom>
 
@@ -20,66 +21,68 @@ export const Portfolio = () => {
                                     </Zoom>
                                 </div>
 
-                                <div>
-                                    <p className="text-4xl text-titleCustom">Line OA Customer Portal</p>
-                                    <p className="text-2xl text-red-400">(It is a product of Icon Framework, developed in collaboration with the team.)</p>
-                                <br />
-                                <p className='indent-7 break-word text-gray-400'>
-                                A web application with a menu accessible via the LINE application serves as a tool to gather convenience menus for residents in a residential project. For example, it includes a menu for expenses that allows residents to conveniently transfer various payments online, a package notification menu to alert residents of new deliveries, the ability to book shared facilities via mobile, a maintenance request system, and more.
-                                </p>
+                                <div className=''>
+                                    <p className="title text-titleCustom">Line OA Customer Portal</p>
+                                    <p className="sub-title text-red-400">(It is a product of Icon Framework, developed in collaboration with the team.)</p>
+                                    <br />
+                                    <p className='indent-7 break-word text-gray-400'>
+                                        A web application with a menu accessible via the LINE application serves as a tool to gather convenience menus for residents in a residential project. For example, it includes a menu for expenses that allows residents to conveniently transfer various payments online, a package notification menu to alert residents of new deliveries, the ability to book shared facilities via mobile, a maintenance request system, and more.
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
-                    <div className='w-100 flex flex-row justify-center mt-10'>
-                        <div className='p-4 items-center justify-center  rounded-xl group sm:flex space-x-6 bg-white bg-opacity-10 shadow-xl hover:rounded-2xl w-[50%] h-[500px] p-5'>
-                            <div className='flex flex-row'>
+
+                    <div className='box'>
+                        <div className='box-item'>
+                            <div className='box-item-inside'>
                                 <div>
                                     <Zoom>
 
-                                    <div role="img" className="bg-[url('./assets/images/digitalMortgage.png')] bg-hero bg-no-repeat bg-contain bg-center  h-64 w-64">
+                                        <div role="img" className="bg-[url('./assets/images/digitalMortgage.png')] bg-hero bg-no-repeat bg-contain bg-center  h-64 w-64">
 
                                         </div>
                                     </Zoom>
                                 </div>
 
-                                <div>
-                                <p className="text-4xl text-titleCustom">Line OA Digital Mortgage</p>
-                                    <p className="text-2xl text-red-400">(It is a product of Icon Framework, developed in collaboration with the team.)</p>
-                                <br />
-                                <p className='indent-7 break-word text-gray-400'>
-                                A web application with a menu accessible via the LINE application serves as a tool to simplify the loan application process, allowing users to apply on their own from anywhere. Users can check their credit bureau status and easily track the progress of their loan application.                                </p>
+                                <div className=''>
+                                    <p className="title text-titleCustom">Line OA Digital Mortgage</p>
+                                    <p className="sub-title text-red-400">(It is a product of Icon Framework, developed in collaboration with the team.)</p>
+                                    <br />
+                                    <p className='indent-7 break-word text-gray-400'>
+                                        A web application with a menu accessible via the LINE application serves as a tool to simplify the loan application process, allowing users to apply on their own from anywhere. Users can check their credit bureau status and easily track the progress of their loan application.
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
-                    <div className='w-100 flex flex-row justify-center mt-10'>
-                        <div className='p-4 items-center justify-center  rounded-xl group sm:flex space-x-6 bg-white bg-opacity-10 shadow-xl hover:rounded-2xl w-[50%] h-[500px] p-5'>
-                            <div className='flex flex-row'>
-                                <div className='ml-10 mr-10'>
+
+                    <div className='box'>
+                        <div className='box-item'>
+                            <div className='box-item-inside'>
+                                <div className='m-5'>
                                     <Zoom>
 
-                                    <div role='img' className="bg-[url('./assets/images/developerPortal.png')] bg-hero bg-no-repeat bg-contain bg-center  h-64 w-64">
+                                        <div role='img' className="bg-[url('./assets/images/developerPortal.png')] bg-hero bg-no-repeat bg-contain bg-center  h-64 w-64">
 
                                         </div>
                                     </Zoom>
                                 </div>
 
-                                <div > 
-                                <p className="text-4xl text-titleCustom">Developer Portal</p>
-                                    <p className="text-2xl text-red-400">(It is a product of Icon Framework, developed in collaboration with the team.)</p>
-                                <br />
-                                <p className='indent-7 break-word text-gray-400'>
-                                A web application designed to support real estate sales serves as a tool for developers to input customer information, ensuring that property transactions are managed within the system.                               
-                                </p>
-                                 </div>
+                                <div className=''>
+                                    <p className="title text-titleCustom">Developer Portal</p>
+                                    <p className="sub-title text-red-400">(It is a product of Icon Framework, developed in collaboration with the team.)</p>
+                                    <br />
+                                    <p className='indent-7 break-word text-gray-400'>
+                                    A web application designed to support real estate sales serves as a tool for developers to input customer information, ensuring that property transactions are managed within the system.
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        
+
                     </div>
-            
                 </div>
             </section>
         </>

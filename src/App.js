@@ -1,7 +1,7 @@
 import './App.css';
 import Routes from './routers';
 import { BrowserRouter } from "react-router-dom";
-import { Home, Navbar, AboutMe, Portfolio } from './components';
+import { Home, Navbar, AboutMe, Portfolio , Contact} from './components';
 
 function App() {
   return (
@@ -12,9 +12,12 @@ function App() {
       <div className='overflow-x-hidden'>
         <Navbar />
         <Home />
-
-        <AboutMe />
         <Portfolio />
+        <Contact/> 
+        {/* <AboutMe /> */}
+        {/* <AboutMe />
+        <Portfolio />
+        <Contact/> */}
       </div>
 
     </>

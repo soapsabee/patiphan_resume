@@ -1,0 +1,40 @@
+@mixin tablet-and-up {
+    @media screen and (min-width: 769px) {
+      @content;
+    }
+  }
+
+@mixin mobile-only {
+    @media screen and (max-width: 600px) {
+      @content;
+    }
+  }
+
+.box {
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    margin-top: 50px;
+    .box-item {
+        @include tablet-and-up {
+            padding: 5;
+            background:#454545;
+          }
+        border-radius:2%;
+        display:"flex";
+        .box-item-inside {
+            display:flex;
+            align-items:center;
+            @include mobile-only {
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+            .title {
+                font-size: 32px;
+            }
+            .sub-title {
+                font-size: 14px;
+            }
+        }
+    }
+}
