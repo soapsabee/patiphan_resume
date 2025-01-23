@@ -16,14 +16,14 @@ pipeline {
 
         stage('Debug') {
             steps {
-             sh 'env && which docker && docker --version'
+             bat 'env && which docker && docker --version'
             }
         }
 
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh '''
+                    bat '''
                     echo "Building Docker image..."
                     docker build -t $DOCKER_IMAGE:$DOCKER_TAG .
                     '''
@@ -34,7 +34,7 @@ pipeline {
         stage('Run Application') {
             steps {
                 script {
-                    sh '''
+                    bat '''
                     echo "Stopping existing container (if any)..."
                     docker stop resume-app || true
                     docker rm resume-app || true
@@ -48,7 +48,7 @@ pipeline {
         stage('Validate Application') {
             steps {
                 script {
-                    sh '''
+                    bat '''
                     echo "Validating the application..."
                     docker ps | grep resume-app
                     curl -f http://localhost:$APP_PORT || exit 1
@@ -60,7 +60,7 @@ pipeline {
         stage('Cleanup') {
             steps {
                 script {
-                    sh '''
+                    bat '''
                     echo "Cleaning up unused Docker resources..."
                     docker system prune -f
                     '''
