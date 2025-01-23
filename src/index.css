@@ -14,3 +14,7 @@
     src: url(./fonts/Kanit-Medium.ttf) format("truetype");
   }
 }
+
+body {
+  background-color: #27272A;
+}
