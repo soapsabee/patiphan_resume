@@ -14,6 +14,12 @@ pipeline {
             }
         }
 
+        stage('Debug') {
+            steps {
+             sh 'env && which docker && docker --version'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 script {
