@@ -18,3 +18,8 @@
 body {
   background-color: #27272A;
 }
+
+
+[data-rmiz-modal-overlay="visible"] {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+}
