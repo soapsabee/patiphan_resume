@@ -60,7 +60,7 @@ export const Home = () => {
           <li className='li-time'>
             <h1 className='text-titleCustom  mt-[-20px]'>GPA</h1>
             <hr />
-            <p className="text-sm mt-2 text-gray-400"> 3.55 </p>
+            <p className="text-sm mt-2 text-gray-400"> 3.53 </p>
           </li>
         </div>
       </div>
