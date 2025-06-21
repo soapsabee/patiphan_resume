@@ -23,7 +23,7 @@ export const Home = () => {
               <br />
               <div className="place-self-center">
                 <p className="text-1xl overflow-hidden border-r-4 border-r-white pr-1 text-white whitespace-nowrap font-mono animate-typing">
-                  Frontend Developer
+                  Full Stack Developer
                 </p>
               </div>
               <br />
